@@ -1,4 +1,4 @@
-interface ProductsType {
+interface ProductsListProps {
   products: ProductType[];
 }
 
@@ -18,7 +18,7 @@ export interface ProductType {
   subscription: true;
 }
 
-export const ProductsList = ({ products }: ProductsType) => {
+export const ProductsList = ({ products }: ProductsListProps) => {
   const getDiscount = (discount: any) => {
     return typeof discount === "number" ? `${discount}%` : "";
   };
@@ -37,6 +37,7 @@ export const ProductsList = ({ products }: ProductsType) => {
           <strong>Discount</strong>
         </span>
       </li>
+      {/* TODO make into Header component */}
       {products.map((product: ProductType) => (
         <li
           key={product.id}

@@ -22,3 +22,18 @@
 .product-item:last-child {
   border-bottom: none;
 }
+
+.product-search-input-wrapper{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.product-search-input {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  background-color: #fafafa;    
+}
