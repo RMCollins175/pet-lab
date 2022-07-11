@@ -1,0 +1,24 @@
+.container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.products-list {
+  border-radius: 4px;
+  border: 1px solid #eaeaea;
+}
+
+.product-item {
+  display: grid;
+  justify-content: center;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 2fr 1fr 0.5fr;
+  padding: 16px 24px;
+  border-bottom: 1px solid #eaeaea;
+  cursor: pointer;
+}
+
+.product-item:last-child {
+  border-bottom: none;
+}
