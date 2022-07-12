@@ -14,7 +14,6 @@ function App() {
   const [initialProducts, setInitialProducts] = useState<ProductType[]>([]);
 
   const handleSearch: FormEventHandler<HTMLFormElement> = (event) => {
-    console.log("🚀 ~ file: App.tsx ~ line 17 ~ App ~ event", event);
     event.preventDefault();
 
     let inputs = event.currentTarget;
@@ -29,11 +28,10 @@ function App() {
     }
 
     if (inputs.sub.value) {
-      queryString += `subscription=${inputs.sub.value}`;
+      queryString += `subscription=${inputs.subscription.value}`;
     }
 
     if (queryString.length === 0) {
-      console.log("test");
       setProducts(initialProducts);
       return;
     }
@@ -69,37 +67,8 @@ function App() {
 
   return (
     <main className="container">
-      <div className="filters-container">
-        <form onSubmit={handleSearch} className="filters">
-          <label className="filter">
-            Tag: <input type="text" name="tag" />
-          </label>
-          <label className="filter">
-            Price: <input type="number" name="price" min="1" />
-          </label>
-          <label className="filter">
-            Subscription:
-            <select name="sub">
-              <option></option>
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
-          </label>
-          <button type="submit" className="search-button" disabled={isLoading}>
-            Search
-          </button>
-        </form>
-        <button
-          className="search-button"
-          disabled={isLoading}
-          onClick={() => console.log("reset")}
-        >
-          Reset
-        </button>
-      </div>
-      <div className="product-container">
-        <ProductsList products={products} />
-      </div>
+      <Filters handleSearch={handleSearch} loading={isLoading} />
+      <ProductsList products={products} />
     </main>
   );
 }
