@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-interface UsersSearchInputProps {
+interface ProductsSearchInputProps {
   //   onSearch: (arg0: string) => void;
   isLoading: boolean;
   setProductId: (arg0: string) => void;
@@ -11,7 +11,7 @@ export const ProductsSearchInput = ({
   isLoading,
   setProductId,
   productId,
-}: UsersSearchInputProps) => {
+}: ProductsSearchInputProps) => {
   return (
     <div className="product-search-input-wrapper">
       <input
