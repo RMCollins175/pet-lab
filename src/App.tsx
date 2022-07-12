@@ -14,48 +14,35 @@ function App() {
   const [productId, setProductId] = useState("");
   console.log("🚀 ~ file: App.tsx ~ line 16 ~ App ~ productId", productId);
 
-  const filterProducts = (product: ProductType) => {
-    const filteredProducts = products.filter((p: ProductType) => {
-      return p.title.toLowerCase().includes(product.title.toLowerCase());
-    });
-
-    setProducts(filteredProducts);
-  };
-
-  const productSearchHandler = (id: string) => {
-    setIsLoading(true);
-    fetch(`${API_BASE_URL}/${id}`)
-      .then((r) => r.json())
-      .then((data) => {
-        filterProducts(data);
-        setIsLoading(false);
-      });
-  };
+  const handleSearch = (event: any) => {};
 
   useEffect(() => {
-    if (productId) {
-      productSearchHandler(productId);
-    } else {
-      fetch(API_BASE_URL)
-        .then((r) => r.json())
-        .then((data) => {
-          setProducts(data);
-        });
-    }
-  }, [productId]);
-
-  // useEffect(() => {
-  //     fetch(API_BASE_URL)
-  //       .then((r) => r.json())
-  //       .then((data) => {
-  //         setProducts(data);
-  //       });
-  // }, []);
+    fetch(API_BASE_URL)
+      .then((r) => r.json())
+      .then((data) => {
+        setProducts(data);
+      });
+  }, []);
 
   return (
     <main className="container">
       <div className="filters-container">
-        <Filters />
+        <form onSubmit={handleSearch} className="filters">
+          <label className="filter">
+            Tag: <input type="text" name="tag" />
+          </label>
+          <label className="filter">
+            Price: <input type="number" name="price" min="1" />
+          </label>
+          <label className="filter">
+            Subscription:
+            <select name="sub">
+              <option></option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </label>
+        </form>
       </div>
       <div className="product-container">
         <ProductsSearchInput
