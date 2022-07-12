@@ -11,7 +11,6 @@ const API_BASE_URL = "http://localhost:3000/products";
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [products, setProducts] = useState<any>([]);
-  // const [searchResults, setSearchResults] = useState<ProductType | null>(null);
   const [productId, setProductId] = useState("");
   console.log("🚀 ~ file: App.tsx ~ line 16 ~ App ~ productId", productId);
 
@@ -47,7 +46,7 @@ function App() {
 
   return (
     <main className="container">
-      <div className="users-search-container">
+      <div>
         <ProductsSearchInput
           isLoading={isLoading}
           setProductId={setProductId}

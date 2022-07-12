@@ -26,7 +26,7 @@ export const ProductsList = ({ products }: ProductsListProps) => {
   return (
     <ul className="products-list">
       <li className="product-item" data-testID="product-list">
-        <div style={{ paddingLeft: "50px" }} />
+        <div></div>
         <span data-testID="product-name">
           <strong>Title</strong>
         </span>
