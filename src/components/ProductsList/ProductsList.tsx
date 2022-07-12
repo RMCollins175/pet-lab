@@ -30,14 +30,14 @@ export const ProductsList = ({ products }: ProductsListProps) => {
       <ProductsListHeader />
       {products.map((product: ProductType) => (
         <li
-          key={product.id}
+          key={product.slug}
           className="product-item"
-          data-testID="product-list"
+          data-testid="product-list"
         >
           <img src={product.image_src} alt={product.title} height={50} />
-          <span data-testID="product-name">{product.title}</span>
-          <span data-testID="product-price">£{product.price}</span>
-          <span data-testID="subscription-discount">
+          <span data-testid="product-name">{product.title}</span>
+          <span data-testid="product-price">£{product.price}</span>
+          <span data-testid="subscription-discount">
             {getDiscount(product.subscription_discount)}
           </span>
         </li>

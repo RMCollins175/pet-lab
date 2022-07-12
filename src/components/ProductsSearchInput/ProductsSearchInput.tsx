@@ -21,10 +21,10 @@ export const ProductsSearchInput = ({
         placeholder="Search products..."
         type="text"
         value={productId}
-        data-testID="search-input"
+        data-testid="search-input"
       />
       {/* {isLoading && (
-        <div className="loader-wrapper" data-testID="loading">
+        <div className="loader-wrapper" data-testid="loading">
           <LoaderIcon />
         </div>
       )} */}
