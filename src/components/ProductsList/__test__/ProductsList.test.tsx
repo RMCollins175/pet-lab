@@ -1,7 +1,7 @@
 import { mount } from "enzyme";
 import { ProductsList } from "../ProductsList";
 
-const dummyProducts = [
+export const dummyProducts = [
   {
     id: 1,
     slug: "joint-chews-for-dogs",
