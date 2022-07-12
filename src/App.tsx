@@ -5,6 +5,7 @@ import {
   ProductType,
 } from "./components/ProductsList/ProductsList";
 import { ProductsSearchInput } from "./components/ProductsSearchInput/ProductsSearchInput";
+import { Filters } from "./components/Filters/Filters";
 
 const API_BASE_URL = "http://localhost:3000/products";
 
@@ -46,15 +47,17 @@ function App() {
 
   return (
     <main className="container">
-      <div>
+      <div className="filters-container">
+        <Filters />
+      </div>
+      <div className="product-container">
         <ProductsSearchInput
           isLoading={isLoading}
           setProductId={setProductId}
           productId={productId}
         />
+        <ProductsList products={products} />
       </div>
-
-      <ProductsList products={products} />
     </main>
   );
 }

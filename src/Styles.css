@@ -1,8 +1,17 @@
 .container {
-  width: 45%;
   margin: 0 auto;
   padding: 40px;
+  display: flex;
+  justify-content: space-between;
 }
+
+.product-container {
+ width: 75%;
+}
+
+.filters-container {
+  width: 20%;
+ }
 
 .products-list {
   border-radius: 4px;
