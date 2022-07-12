@@ -6,8 +6,7 @@ import {
 } from "./components/ProductsList/ProductsList";
 import { ProductsSearchInput } from "./components/ProductsSearchInput/ProductsSearchInput";
 import { Filters } from "./components/Filters/Filters";
-
-const API_BASE_URL = "http://localhost:3000/products";
+import { API_BASE_URL } from "./constants/apiBaseUrl";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -44,6 +43,14 @@ function App() {
         });
     }
   }, [productId]);
+
+  // useEffect(() => {
+  //     fetch(API_BASE_URL)
+  //       .then((r) => r.json())
+  //       .then((data) => {
+  //         setProducts(data);
+  //       });
+  // }, []);
 
   return (
     <main className="container">
