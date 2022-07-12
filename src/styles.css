@@ -82,6 +82,8 @@ button:active {
     background-color: #fafafa;    
 }
 
+
+
 /* @media  (max-width: 900px) {
     .product-item {
       grid-template-columns: 1fr 1.5fr 0.5fr 0.5fr;

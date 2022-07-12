@@ -1,9 +1,8 @@
 import { ProductsListHeader } from "./ProductsListHeader/ProductsListHeader";
 
-interface ProductsListProps {
+export interface ProductsListProps {
   products: ProductType[];
 }
-
 export interface ProductType {
   id: number;
   slug: string;
@@ -29,20 +28,22 @@ export const ProductsList = ({ products }: ProductsListProps) => {
     <div className="product-container">
       <ul className="products-list">
         <ProductsListHeader />
-        {products.map((product: ProductType) => (
-          <li
-            key={product.slug}
-            className="product-item"
-            data-testid="product-list"
-          >
-            <img src={product.image_src} alt={product.title} height={50} />
-            <span data-testid="product-name">{product.title}</span>
-            <span data-testid="product-price">£{product.price}</span>
-            <span data-testid="subscription-discount">
-              {getDiscount(product.subscription_discount)}
-            </span>
-          </li>
-        ))}
+        {products.length > 0
+          ? products.map((product: ProductType) => (
+              <li
+                key={product.slug}
+                className="product-item"
+                data-testid="product-list"
+              >
+                <img src={product.image_src} alt={product.title} height={50} />
+                <span data-testid="product-name">{product.title}</span>
+                <span data-testid="product-price">£{product.price}</span>
+                <span data-testid="subscription-discount">
+                  {getDiscount(product.subscription_discount)}
+                </span>
+              </li>
+            ))
+          : null}
       </ul>
     </div>
   );
