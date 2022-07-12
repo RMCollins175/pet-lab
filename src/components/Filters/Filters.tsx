@@ -9,13 +9,13 @@ export const Filters = ({ handleSearch, loading }: FiltersProps) => {
   return (
     <div className="filters-container">
       <form onSubmit={handleSearch} className="filters">
-        <label className="filter">
+        <label className="filter" data-testid="tag-label">
           Tag: <input type="text" name="tag" />
         </label>
-        <label className="filter">
+        <label className="filter" data-testid="price-label">
           Price: <input type="number" name="price" min="1" max="1000" />
         </label>
-        <label className="filter">
+        <label className="filter" data-testid="subscription-label">
           Subscription:
           <select name="subscription">
             <option></option>
@@ -23,10 +23,20 @@ export const Filters = ({ handleSearch, loading }: FiltersProps) => {
             <option value="false">No</option>
           </select>
         </label>
-        <button type="submit" className="search-button" disabled={loading}>
+        <button
+          type="submit"
+          className="search-button"
+          disabled={loading}
+          data-testid="search-button"
+        >
           Search
         </button>
-        <input type="reset" className="search-button" value="Reset"></input>
+        <input
+          type="reset"
+          className="search-button"
+          value="Reset"
+          data-testid="reset-button"
+        ></input>
       </form>
     </div>
   );

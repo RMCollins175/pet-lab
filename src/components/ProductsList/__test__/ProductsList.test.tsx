@@ -1,5 +1,4 @@
 import { mount } from "enzyme";
-import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
 import { ProductsList } from "../ProductsList";
 
 const dummyProducts = [

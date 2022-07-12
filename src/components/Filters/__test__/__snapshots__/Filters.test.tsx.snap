@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filters component tests should render a default productList component 1`] = `ReactWrapper {}`;
+
+exports[`ProductsList component tests should render a default productList component 1`] = `ReactWrapper {}`;
