@@ -17,12 +17,7 @@ function App() {
     event.preventDefault();
 
     let inputs = event.currentTarget;
-    console.log("🚀 ~ file: App.tsx ~ line 20 ~ App ~ inputs", inputs);
 
-    console.log(
-      "🚀 ~ file: App.tsx ~ line 22 ~ App ~ inputs.tag.value",
-      inputs.tag.value
-    );
     let queryString = "";
 
     if (inputs.tag.value) {
