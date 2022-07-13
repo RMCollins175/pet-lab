@@ -17,6 +17,12 @@ function App() {
     event.preventDefault();
 
     let inputs = event.currentTarget;
+    console.log("🚀 ~ file: App.tsx ~ line 20 ~ App ~ inputs", inputs);
+
+    console.log(
+      "🚀 ~ file: App.tsx ~ line 22 ~ App ~ inputs.tag.value",
+      inputs.tag.value
+    );
     let queryString = "";
 
     if (inputs.tag.value) {
@@ -27,7 +33,7 @@ function App() {
       queryString += `price_lte=${inputs.price.value}`;
     }
 
-    if (inputs.sub.value) {
+    if (inputs.subscription.value) {
       queryString += `subscription=${inputs.subscription.value}`;
     }
 
@@ -52,13 +58,26 @@ function App() {
       });
   };
 
-  useEffect(() => {
-    fetch(API_BASE_URL)
+  const fetchProducts = () => {
+    setIsLoading(true);
+
+    fetch(`${API_BASE_URL}`)
       .then((r) => r.json())
       .then((data) => {
         setProducts(data);
         setInitialProducts(data);
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchProducts();
   }, []);
 
   if (error) {
