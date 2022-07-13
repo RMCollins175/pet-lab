@@ -13,26 +13,30 @@ export const useFetchProducts = () => {
 
     let inputs = event.currentTarget;
 
-    let queryString = "";
+    const queryString = new URLSearchParams();
 
     if (inputs.tag.value) {
-      queryString += `tags_like=${inputs.tag.value}`;
+      queryString.append("tags_like", inputs.tag.value);
     }
 
     if (inputs.price.value) {
-      queryString += `price_lte=${inputs.price.value}`;
+      queryString.append("price_lte", inputs.price.value);
     }
 
     if (inputs.subscription.value) {
-      queryString += `subscription=${inputs.subscription.value}`;
+      queryString.append("subscription", inputs.subscription.value);
     }
 
-    if (queryString.length === 0) {
+    if (queryString.toString().length === 0) {
       setProducts(initialProducts);
       return;
     }
 
     setIsLoading(true);
+    console.log(
+      "🚀 ~ file: useFetchProducts.ts ~ line 31 ~ useFetchProducts ~ queryString",
+      queryString
+    );
 
     fetch(`${API_BASE_URL}?${queryString}`)
       .then((r) => r.json())
