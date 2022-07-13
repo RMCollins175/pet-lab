@@ -15,3 +15,5 @@ At first I wasn't sure how to filter through an array of tags in a query, but ma
 I wasn't sure about the price filter, as no product had a price of 30, but I think I covered it.
 
 Definitely could have used some more tests, improved Error handling, and a responsive design but these were not essential to requirements.
+
+URLSearchParams was a new topic for me. I found it useful for filtering through the query string, when multiple filters were selected. It took me a bit of time understanding how it worked.
