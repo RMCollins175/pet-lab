@@ -33,10 +33,6 @@ export const useFetchProducts = () => {
     }
 
     setIsLoading(true);
-    console.log(
-      "🚀 ~ file: useFetchProducts.ts ~ line 31 ~ useFetchProducts ~ queryString",
-      queryString
-    );
 
     fetch(`${API_BASE_URL}?${queryString}`)
       .then((r) => r.json())
