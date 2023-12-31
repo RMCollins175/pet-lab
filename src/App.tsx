@@ -17,9 +17,12 @@ function App() {
   }
 
   return (
-    <main className="container">
-      <Filters handleSearch={handleSearch} loading={isLoading} />
-      <ProductsList products={products} />
+    <main>
+      <h1 className="title">PetLab Tech Test</h1>
+      <div className="container">
+        <Filters handleSearch={handleSearch} loading={isLoading} />
+        <ProductsList products={products} />
+      </div>
     </main>
   );
 }
