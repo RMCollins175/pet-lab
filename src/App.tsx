@@ -27,7 +27,7 @@ function App() {
       queryString += `price_lte=${inputs.price.value}`;
     }
 
-    if (inputs.sub.value) {
+    if (inputs.subscription.value) {
       queryString += `subscription=${inputs.subscription.value}`;
     }
 
