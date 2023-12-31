@@ -10,7 +10,6 @@
 
 .filters-container {
     min-width: 20%;
-    padding-top: 15px;
 }
 
 .filters {    
@@ -101,6 +100,10 @@ button:active {
     .container {
         flex-direction: column;
         
+    }
+
+    .product-container {
+        padding-top: 20px
     }
 }
 
