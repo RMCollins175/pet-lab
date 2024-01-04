@@ -1,3 +1,4 @@
+import { ProductItem } from "../ProductItem/ProductItem";
 import { ProductsListHeader } from "./ProductsListHeader/ProductsListHeader";
 
 export interface ProductsListProps {
@@ -20,28 +21,13 @@ export interface ProductType {
 }
 
 export const ProductsList = ({ products }: ProductsListProps) => {
-  const getDiscount = (discount: any) => {
-    return typeof discount === "number" ? `${discount}%` : "";
-  };
-
   return (
-    <div className="product-container">
+    <div className="products-container">
       <ul className="products-list">
         <ProductsListHeader />
         {products.length > 0
           ? products.map((product: ProductType) => (
-              <li
-                key={product.slug}
-                className="product-item"
-                data-testid="product-list"
-              >
-                <img src={product.image_src} alt={product.title} height={50} />
-                <span data-testid="product-name">{product.title}</span>
-                <span data-testid="product-price">£{product.price}</span>
-                <span data-testid="subscription-discount">
-                  {getDiscount(product.subscription_discount)}
-                </span>
-              </li>
+              <ProductItem key={product.id} product={product} />
             ))
           : null}
       </ul>

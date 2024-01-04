@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-
 interface ProductsSearchInputProps {
-  //   onSearch: (arg0: string) => void;
   isLoading: boolean;
   setProductId: (arg0: string) => void;
   productId: string;
