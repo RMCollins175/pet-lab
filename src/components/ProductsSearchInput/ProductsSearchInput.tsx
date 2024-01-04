@@ -10,10 +10,10 @@ export const ProductsSearchInput = ({
   productId,
 }: ProductsSearchInputProps) => {
   return (
-    <div className="product-search-input-wrapper">
+    <div className="flex justify-end">
       <input
         aria-label="Search product"
-        className="product-search-input"
+        className="w-1/2 p-2.5 border border-gray-300 rounded text-lg bg-gray-100"
         onChange={(e) => setProductId(e.target.value)}
         placeholder="Search products..."
         type="text"

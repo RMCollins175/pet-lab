@@ -22,8 +22,8 @@ export interface ProductType {
 
 export const ProductsList = ({ products }: ProductsListProps) => {
   return (
-    <div className="products-container">
-      <ul className="products-list">
+    <div className="min-w-3/4 pt-4">
+      <ul className="rounded border border-gray-300 pl-0">
         <ProductsListHeader />
         {products.length > 0
           ? products.map((product: ProductType) => (

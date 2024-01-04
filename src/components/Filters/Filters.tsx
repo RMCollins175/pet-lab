@@ -7,24 +7,39 @@ export interface FiltersProps {
 
 export const Filters = ({ handleSearch, loading }: FiltersProps) => {
   return (
-    <div className="filters-container">
-      <form onSubmit={handleSearch} className="filters">
-        <label className="filter" data-testid="tag-label">
-          Tag: <input className="inputs" type="text" name="tag" />
-        </label>
-        <label className="filter" data-testid="price-label">
-          Price:{" "}
+    <div className="min-w-1/5 pt-4">
+      <form
+        onSubmit={handleSearch}
+        className="w-64 flex flex-col justify-between">
+        <label
+          className="flex justify-between items-center border border-gray-200 rounded p-2.5 text-lg"
+          data-testid="tag-label">
+          Tag:
           <input
-            className="inputs"
+            className="w-1/2 p-1 border border-gray-200 rounded bg-gray-100"
+            type="text"
+            name="tag"
+          />
+        </label>
+        <label
+          className="flex justify-between items-center border border-gray-200 rounded p-2.5 text-lg"
+          data-testid="price-label">
+          Price:
+          <input
+            className="w-1/2 p-1 border border-gray-200 rounded bg-gray-100"
             type="number"
             name="price"
             min="1"
             max="1000"
           />
         </label>
-        <label className="filter" data-testid="subscription-label">
+        <label
+          className="flex justify-between items-center border border-gray-200 rounded p-2.5 text-lg"
+          data-testid="subscription-label">
           Subscription:
-          <select name="subscription" className="inputs">
+          <select
+            name="subscription"
+            className="w-1/2 p-1 border border-gray-200 rounded bg-gray-100">
             <option></option>
             <option value="true">Yes</option>
             <option value="false">No</option>
@@ -32,14 +47,14 @@ export const Filters = ({ handleSearch, loading }: FiltersProps) => {
         </label>
         <button
           type="submit"
-          className="search-button"
+          className="bg-gray-200 border border-gray-200 rounded text-lg p-2.5 mt-5 cursor-pointer"
           disabled={loading}
           data-testid="search-button">
           Search
         </button>
         <input
           type="reset"
-          className="search-button"
+          className="bg-gray-200 border border-gray-200 rounded text-lg p-2.5 mt-5 cursor-pointer"
           value="Reset"
           data-testid="reset-button"></input>
       </form>

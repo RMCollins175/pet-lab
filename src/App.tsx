@@ -1,4 +1,3 @@
-import "./styles.css";
 import React, { useEffect } from "react";
 import { ProductsList } from "./components/ProductsList/ProductsList";
 import { Filters } from "./components/Filters/Filters";
@@ -18,8 +17,8 @@ function App() {
 
   return (
     <main>
-      <h1 className="title">PetLab Tech Test</h1>
-      <div className="container">
+      <h1 className="text-center">PetLab</h1>
+      <div className="flex flex-col md:flex-row justify-between p-10 md:space-x-4 lg:space-x-8">
         <Filters handleSearch={handleSearch} loading={isLoading} />
         <ProductsList products={products} />
       </div>
