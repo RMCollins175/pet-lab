@@ -8,9 +8,7 @@ export interface FiltersProps {
 export const Filters = ({ handleSearch, loading }: FiltersProps) => {
   return (
     <div className="min-w-1/5 pt-4">
-      <form
-        onSubmit={handleSearch}
-        className="w-64 flex flex-col justify-between">
+      <form onSubmit={handleSearch} className="flex flex-col justify-between">
         <label
           className="flex justify-between items-center border border-gray-200 rounded p-2.5 text-lg"
           data-testid="tag-label">
