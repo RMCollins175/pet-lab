@@ -1,31 +1,76 @@
-import { mount } from "enzyme";
+import React from "react";
+import { render, fireEvent, waitFor, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import { Filters } from "../Filters";
 
-const filtersProps = {
-  loading: false,
-  handleSearch: jest.fn(),
-};
+describe("Filters Component", () => {
+  test("renders all form elements", () => {
+    const mockHandleSearch = jest.fn();
+    render(<Filters handleSearch={mockHandleSearch} loading={false} />);
 
-const elem = <Filters {...filtersProps} />;
-const wrapper = mount(elem);
-
-describe("Filters component tests", () => {
-  it("should render a default productList component", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(screen.getByTestId("tag-label")).toBeInTheDocument();
+    expect(screen.getByTestId("price-label")).toBeInTheDocument();
+    expect(screen.getByTestId("subscription-label")).toBeInTheDocument();
+    expect(screen.getByTestId("search-button")).toBeInTheDocument();
+    expect(screen.getByTestId("reset-button")).toBeInTheDocument();
   });
 
-  it("should render empty tag and price input fields", () => {
-    expect(wrapper.find('[data-testid="tag-label"]').exists()).toBe(true);
-    expect(wrapper.find('[data-testid="price-label"]').exists()).toBe(true);
+  test("allows input to be entered", () => {
+    const mockHandleSearch = jest.fn();
+    render(<Filters handleSearch={mockHandleSearch} loading={false} />);
+
+    const tagInput = screen.getByLabelText("Tag:") as HTMLInputElement;
+    fireEvent.change(tagInput, { target: { value: "test tag" } });
+    expect(tagInput.value).toBe("test tag");
+
+    const priceInput = screen.getByLabelText("Price:") as HTMLInputElement;
+    fireEvent.change(priceInput, { target: { value: 100 } });
+    expect(priceInput.value).toBe("100");
   });
 
-  it("should fire onSubmit event when the search button is clicked", () => {
-    wrapper.find('[data-testid="search-button"]').simulate("click", {
-      target: {
-        value: "dog",
-      },
+  test("submits form with correct data", async () => {
+    const mockHandleSearch = jest.fn();
+    render(<Filters handleSearch={mockHandleSearch} loading={false} />);
+
+    fireEvent.change(screen.getByLabelText("Tag:"), {
+      target: { value: "test tag" },
     });
-    expect(filtersProps.handleSearch).toHaveBeenCalled();
-    expect(wrapper.find("input").props().value).toBe("dog");
+    fireEvent.change(screen.getByLabelText("Price:"), {
+      target: { value: 100 },
+    });
+    fireEvent.click(screen.getByTestId("search-button"));
+
+    await waitFor(() => {
+      expect(mockHandleSearch).toHaveBeenCalled();
+    });
+  });
+
+  // test("disables search button when loading", () => {
+  //   const mockHandleSearch = jest.fn();
+  //   render(<Filters handleSearch={mockHandleSearch} loading={true} />);
+
+  //   expect(screen.getByText("Search")).toBeDisabled();
+  // });
+
+  test("resets form fields", () => {
+    const mockHandleSearch = jest.fn();
+    render(<Filters handleSearch={mockHandleSearch} loading={false} />);
+
+    const tagInput = screen.getByLabelText("Tag:") as HTMLInputElement;
+    fireEvent.change(tagInput, { target: { value: "test tag" } });
+    fireEvent.click(screen.getByTestId("reset-button"));
+
+    expect(tagInput.value).toBe("");
+  });
+});
+
+describe("Filters Component Snapshot", () => {
+  it("should match the snapshot", () => {
+    const mockHandleSearch = jest.fn();
+    const { asFragment } = render(
+      <Filters handleSearch={mockHandleSearch} loading={false} />
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });
