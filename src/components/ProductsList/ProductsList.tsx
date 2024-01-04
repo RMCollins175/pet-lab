@@ -10,7 +10,7 @@ export interface ProductType {
   title: string;
   vendor: string;
   tags: Array<string>;
-  published: true;
+  published: boolean;
   url: string;
   image_src: string;
   option_value: string;
