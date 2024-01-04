@@ -12,24 +12,26 @@ function App() {
   }, []);
 
   if (error) {
-    return <h1>Sorry, please try again later</h1>;
+    return (
+      <h1 className="text-center mt-20 font-semibold text-xl">
+        Sorry, please try again later
+      </h1>
+    );
   }
 
   return (
-    <main className="bg-gradient-to-r from-blue-400 to-indigo-400">
-      <div className="flex flex-col items-center justify-center py-20">
-        <h1 className="text-6xl font-bold text-indigo-900 mb-4">PetLab</h1>
-        <p className="text-xl text-indigo-800 mb-4">
-          Your One-Stop Shop for Pet Care
-        </p>
+    <main className="bg-gray-100">
+      <div className="text-center py-10">
+        <h1 className="text-4xl font-semibold text-gray-800 mb-3">PetLab</h1>
+        <p className="text-md text-gray-600">Your One-Stop Shop for Pet Care</p>
       </div>
 
-      <div className="container mx-auto p-6 md:p-10">
-        <div className="flex flex-col md:flex-row md:space-x-4 lg:space-x-8">
-          <div className="md:w-1/4 mb-6 md:mb-0">
+      <div className="container mx-auto p-4 md:p-8">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+          <div className="mb-4 md:mb-0 bg-white shadow-md p-4 rounded-lg">
             <Filters handleSearch={handleSearch} loading={isLoading} />
           </div>
-          <div className="md:w-3/4">
+          <div className="md:w-3/4 bg-white shadow-md p-4 rounded-lg">
             <ProductsList products={products} />
           </div>
         </div>
