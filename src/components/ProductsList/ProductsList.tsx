@@ -22,7 +22,7 @@ export interface ProductType {
 
 export const ProductsList = ({ products }: ProductsListProps) => {
   return (
-    <div className="min-w-3/4 pt-4">
+    <div className="min-w-3/4 ">
       <ul className="rounded border border-gray-300 pl-0">
         <ProductsListHeader />
         {products.length > 0

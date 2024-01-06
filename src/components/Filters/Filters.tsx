@@ -12,11 +12,11 @@ export const Filters = ({
   handleReset,
 }: FiltersProps) => {
   return (
-    <div className="min-w-1/5 pt-4">
+    <div className="min-w-1/5 ">
       <form
         onSubmit={handleSearch}
-        className="flex flex-col justify-between"
-        onReset={handleReset}>
+        onReset={handleReset}
+        className="flex flex-col justify-between">
         <label
           className="flex justify-between items-center border border-gray-200 rounded p-2.5 text-lg"
           data-testid="tag-label">

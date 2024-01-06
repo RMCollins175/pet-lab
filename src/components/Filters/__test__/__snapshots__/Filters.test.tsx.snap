@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filters Component Snapshot should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="min-w-1/5 pt-4"
+  >
+    <form
+      class="flex flex-col justify-between"
+    >
+      <label
+        class="flex justify-between items-center border border-gray-200 rounded p-2.5 text-lg"
+        data-testid="tag-label"
+      >
+        Tag:
+        <input
+          class="w-1/2 p-1 border border-gray-200 rounded bg-gray-100"
+          name="tag"
+          type="text"
+        />
+      </label>
+      <label
+        class="flex justify-between items-center border border-gray-200 rounded p-2.5 text-lg"
+        data-testid="price-label"
+      >
+        Price:
+        <input
+          class="w-1/2 p-1 border border-gray-200 rounded bg-gray-100"
+          max="1000"
+          min="1"
+          name="price"
+          type="number"
+        />
+      </label>
+      <label
+        class="flex justify-between items-center border border-gray-200 rounded p-2.5 text-lg"
+        data-testid="subscription-label"
+      >
+        Subscription:
+        <select
+          class="w-1/2 p-1 border border-gray-200 rounded bg-gray-100"
+          name="subscription"
+        >
+          <option />
+          <option
+            value="true"
+          >
+            Yes
+          </option>
+          <option
+            value="false"
+          >
+            No
+          </option>
+        </select>
+      </label>
+      <button
+        class="bg-gray-200 border border-gray-200 rounded text-lg p-2.5 mt-5 cursor-pointer"
+        data-testid="search-button"
+        type="submit"
+      >
+        Search
+      </button>
+      <input
+        class="bg-gray-200 border border-gray-200 rounded text-lg p-2.5 mt-5 cursor-pointer"
+        data-testid="reset-button"
+        type="reset"
+        value="Reset"
+      />
+    </form>
+  </div>
+</DocumentFragment>
+`;
