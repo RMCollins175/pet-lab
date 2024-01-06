@@ -6,7 +6,14 @@ import { Filters } from "../Filters";
 describe("Filters Component", () => {
   test("renders all form elements", () => {
     const mockHandleSearch = jest.fn();
-    render(<Filters handleSearch={mockHandleSearch} loading={false} />);
+    const mockHandleResetForm = jest.fn();
+    render(
+      <Filters
+        handleSearch={mockHandleSearch}
+        handleReset={mockHandleResetForm}
+        loading={false}
+      />
+    );
 
     expect(screen.getByTestId("tag-label")).toBeInTheDocument();
     expect(screen.getByTestId("price-label")).toBeInTheDocument();
@@ -17,7 +24,14 @@ describe("Filters Component", () => {
 
   test("allows input to be entered", () => {
     const mockHandleSearch = jest.fn();
-    render(<Filters handleSearch={mockHandleSearch} loading={false} />);
+    const mockHandleResetForm = jest.fn();
+    render(
+      <Filters
+        handleSearch={mockHandleSearch}
+        handleReset={mockHandleResetForm}
+        loading={false}
+      />
+    );
 
     const tagInput = screen.getByLabelText("Tag:") as HTMLInputElement;
     fireEvent.change(tagInput, { target: { value: "test tag" } });
@@ -30,7 +44,14 @@ describe("Filters Component", () => {
 
   test("submits form with correct data", async () => {
     const mockHandleSearch = jest.fn();
-    render(<Filters handleSearch={mockHandleSearch} loading={false} />);
+    const mockHandleResetForm = jest.fn();
+    render(
+      <Filters
+        handleSearch={mockHandleSearch}
+        handleReset={mockHandleResetForm}
+        loading={false}
+      />
+    );
 
     fireEvent.change(screen.getByLabelText("Tag:"), {
       target: { value: "test tag" },
@@ -45,16 +66,34 @@ describe("Filters Component", () => {
     });
   });
 
-  // test("disables search button when loading", () => {
-  //   const mockHandleSearch = jest.fn();
-  //   render(<Filters handleSearch={mockHandleSearch} loading={true} />);
+  test("resets form fields when handleReset is called", () => {
+    const mockHandleSearch = jest.fn();
+    const mockHandleResetForm = jest.fn();
+    render(
+      <Filters
+        handleSearch={mockHandleSearch}
+        handleReset={mockHandleResetForm}
+        loading={false}
+      />
+    );
 
-  //   expect(screen.getByText("Search")).toBeDisabled();
-  // });
+    const tagInput = screen.getByLabelText("Tag:") as HTMLInputElement;
+    fireEvent.change(tagInput, { target: { value: "test tag" } });
+    fireEvent.click(screen.getByTestId("reset-button"));
+
+    expect(tagInput.value).toBe("");
+  });
 
   test("resets form fields", () => {
     const mockHandleSearch = jest.fn();
-    render(<Filters handleSearch={mockHandleSearch} loading={false} />);
+    const mockHandleResetForm = jest.fn();
+    render(
+      <Filters
+        handleSearch={mockHandleSearch}
+        handleReset={mockHandleResetForm}
+        loading={false}
+      />
+    );
 
     const tagInput = screen.getByLabelText("Tag:") as HTMLInputElement;
     fireEvent.change(tagInput, { target: { value: "test tag" } });
@@ -67,8 +106,13 @@ describe("Filters Component", () => {
 describe("Filters Component Snapshot", () => {
   it("should match the snapshot", () => {
     const mockHandleSearch = jest.fn();
+    const mockHandleResetForm = jest.fn();
     const { asFragment } = render(
-      <Filters handleSearch={mockHandleSearch} loading={false} />
+      <Filters
+        handleSearch={mockHandleSearch}
+        handleReset={mockHandleResetForm}
+        loading={false}
+      />
     );
 
     expect(asFragment()).toMatchSnapshot();

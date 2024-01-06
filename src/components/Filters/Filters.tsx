@@ -2,13 +2,21 @@ import { FormEventHandler } from "react";
 
 export interface FiltersProps {
   handleSearch: FormEventHandler<HTMLFormElement>;
+  handleReset: FormEventHandler<HTMLFormElement>;
   loading: boolean;
 }
 
-export const Filters = ({ handleSearch, loading }: FiltersProps) => {
+export const Filters = ({
+  handleSearch,
+  loading,
+  handleReset,
+}: FiltersProps) => {
   return (
     <div className="min-w-1/5 pt-4">
-      <form onSubmit={handleSearch} className="flex flex-col justify-between">
+      <form
+        onSubmit={handleSearch}
+        className="flex flex-col justify-between"
+        onReset={handleReset}>
         <label
           className="flex justify-between items-center border border-gray-200 rounded p-2.5 text-lg"
           data-testid="tag-label">

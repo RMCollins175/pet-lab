@@ -27,7 +27,10 @@ export const ProductsList = ({ products }: ProductsListProps) => {
         <ProductsListHeader />
         {products.length > 0
           ? products.map((product: ProductType) => (
-              <ProductItem key={product.id} product={product} />
+              <ProductItem
+                key={`${product.id} + ${product.slug} `}
+                product={product}
+              />
             ))
           : null}
       </ul>

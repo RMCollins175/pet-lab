@@ -4,8 +4,14 @@ import { Filters } from "./components/Filters/Filters";
 import { useFetchProducts } from "./components/utilities/hooks/useFetchProducts";
 
 function App() {
-  const { fetchProducts, error, handleSearch, isLoading, products } =
-    useFetchProducts();
+  const {
+    handleSearch,
+    handleReset,
+    fetchProducts,
+    error,
+    isLoading,
+    products,
+  } = useFetchProducts();
 
   useEffect(() => {
     fetchProducts();
@@ -29,7 +35,11 @@ function App() {
       <div className="container mx-auto p-4 md:p-8">
         <div className="flex flex-col md:flex-row gap-4 md:gap-8">
           <div className="mb-4 md:mb-0 bg-white shadow-md p-4 rounded-lg">
-            <Filters handleSearch={handleSearch} loading={isLoading} />
+            <Filters
+              handleSearch={handleSearch}
+              loading={isLoading}
+              handleReset={handleReset}
+            />
           </div>
           <div className="md:w-3/4 bg-white shadow-md p-4 rounded-lg">
             <ProductsList products={products} />
