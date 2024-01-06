@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsListHeader Component matches snapshot 1`] = `
+<DocumentFragment>
+  <li
+    class="grid justify-center grid-cols-[0.2fr_1.5fr_0.5fr_0.5fr] p-4 border-b border-gray-300 cursor-pointer"
+  >
+    <div />
+    <span
+      aria-label="Title"
+      class="flex items-center justify-center"
+      role="columnheader"
+    >
+      <strong>
+        Title
+      </strong>
+    </span>
+    <span
+      aria-label="Price"
+      class="flex items-center justify-center"
+      role="columnheader"
+    >
+      <strong>
+        Price
+      </strong>
+    </span>
+    <span
+      aria-label="Discount"
+      class="flex items-center justify-center"
+      role="columnheader"
+    >
+      <strong>
+        Discount
+      </strong>
+    </span>
+  </li>
+</DocumentFragment>
+`;

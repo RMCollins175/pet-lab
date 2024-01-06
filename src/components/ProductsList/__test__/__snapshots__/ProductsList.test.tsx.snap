@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsList Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="min-w-3/4 pt-4"
+  >
+    <ul
+      class="rounded border border-gray-300 pl-0"
+    >
+      <li
+        class="grid justify-center grid-cols-[0.2fr_1.5fr_0.5fr_0.5fr] p-4 border-b border-gray-300 cursor-pointer"
+      >
+        <div />
+        <span
+          aria-label="Title"
+          class="flex items-center justify-center"
+          role="columnheader"
+        >
+          <strong>
+            Title
+          </strong>
+        </span>
+        <span
+          aria-label="Price"
+          class="flex items-center justify-center"
+          role="columnheader"
+        >
+          <strong>
+            Price
+          </strong>
+        </span>
+        <span
+          aria-label="Discount"
+          class="flex items-center justify-center"
+          role="columnheader"
+        >
+          <strong>
+            Discount
+          </strong>
+        </span>
+      </li>
+      <li
+        class="grid justify-center grid-cols-[0.2fr_1.5fr_0.5fr_0.5fr] p-4 border-b border-gray-300 cursor-pointer "
+        data-testid="product-list"
+      >
+        <img
+          alt="Joint Care Chews"
+          height="50"
+          src="https://via.placeholder.com/300x300.png?text=Joint+Care+Chews"
+        />
+        <span
+          class="flex items-center justify-center"
+          data-testid="product-name"
+        >
+          Joint Care Chews
+        </span>
+        <span
+          class="flex items-center justify-center"
+          data-testid="product-price"
+        >
+          £42.29
+        </span>
+        <span
+          class="flex items-center justify-center"
+          data-testid="subscription-discount"
+        >
+          25%
+        </span>
+      </li>
+      <li
+        class="grid justify-center grid-cols-[0.2fr_1.5fr_0.5fr_0.5fr] p-4 border-b border-gray-300 cursor-pointer "
+        data-testid="product-list"
+      >
+        <img
+          alt="Dental Chews (Rawhide)"
+          height="50"
+          src="https://via.placeholder.com/300x300.png?text=Dental+Chews"
+        />
+        <span
+          class="flex items-center justify-center"
+          data-testid="product-name"
+        >
+          Dental Chews (Rawhide)
+        </span>
+        <span
+          class="flex items-center justify-center"
+          data-testid="product-price"
+        >
+          £29.95
+        </span>
+        <span
+          class="flex items-center justify-center"
+          data-testid="subscription-discount"
+        >
+          25%
+        </span>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
