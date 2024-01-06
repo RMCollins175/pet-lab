@@ -3,13 +3,11 @@ import { getDiscount } from "../utilities/getDiscount";
 
 interface ProductProps {
   product: ProductType;
-  key: ProductType["id"];
 }
 
-export const ProductItem = ({ product, key }: ProductProps) => {
+export const ProductItem = ({ product }: ProductProps) => {
   return (
     <li
-      key={key}
       className="grid justify-center grid-cols-[0.2fr_1.5fr_0.5fr_0.5fr] p-4 border-b border-gray-300 cursor-pointer "
       data-testid="product-list">
       <img src={product.image_src} alt={product.title} height={50} />
