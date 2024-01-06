@@ -23,6 +23,7 @@ describe("ProductItem Component", () => {
   };
 
   test("renders product information correctly", () => {
+    render(<ProductItem product={mockProduct} />);
     expect(screen.getByText(mockProduct.title)).toBeInTheDocument();
     expect(screen.getByText(`£${mockProduct.price}`)).toBeInTheDocument();
     expect(

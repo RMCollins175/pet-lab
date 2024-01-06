@@ -3,7 +3,7 @@
 exports[`Filters Component Snapshot should match the snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="min-w-1/5 pt-4"
+    class="min-w-1/5 "
   >
     <form
       class="flex flex-col justify-between"

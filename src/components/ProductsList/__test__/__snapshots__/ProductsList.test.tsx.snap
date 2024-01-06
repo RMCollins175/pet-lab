@@ -3,7 +3,7 @@
 exports[`ProductsList Component matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="min-w-3/4 pt-4"
+    class="min-w-3/4 "
   >
     <ul
       class="rounded border border-gray-300 pl-0"
