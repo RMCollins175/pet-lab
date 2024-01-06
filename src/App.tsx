@@ -41,9 +41,17 @@ function App() {
               handleReset={handleReset}
             />
           </div>
-          <div className="md:w-3/4 bg-white shadow-md p-4 rounded-lg flex-grow">
-            <ProductsList products={products} />
-          </div>
+          {products.length > 0 ? (
+            <div className="md:w-3/4 bg-white shadow-md p-4 rounded-lg flex-grow">
+              <ProductsList products={products} />
+            </div>
+          ) : (
+            <div>
+              <h1 className="text-center mt-20 font-semibold text-xl">
+                Sorry, no products match your search
+              </h1>
+            </div>
+          )}
         </div>
       </div>
     </main>

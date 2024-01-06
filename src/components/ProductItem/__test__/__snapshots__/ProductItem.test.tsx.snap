@@ -4,7 +4,6 @@ exports[`ProductItem Component matches snapshot 1`] = `
 <DocumentFragment>
   <li
     class="grid justify-center grid-cols-[0.2fr_1.5fr_0.5fr_0.5fr] p-4 border-b border-gray-300 cursor-pointer "
-    data-testid="product-list"
   >
     <img
       alt="Test Product"

@@ -1,5 +1,5 @@
 import { ProductItem } from "../ProductItem/ProductItem";
-import { ProductsListHeader } from "./ProductsListHeader/ProductsListHeader";
+import { ProductsListHeader } from "../ProductsListHeader/ProductsListHeader";
 
 export interface ProductsListProps {
   products: ProductType[];
@@ -24,15 +24,13 @@ export const ProductsList = ({ products }: ProductsListProps) => {
   return (
     <div className="min-w-3/4 ">
       <ul className="rounded border border-gray-300 pl-0">
-        <ProductsListHeader />
-        {products.length > 0
-          ? products.map((product: ProductType) => (
-              <ProductItem
-                key={`${product.id} + ${product.slug} `}
-                product={product}
-              />
-            ))
-          : null}
+        <ProductsListHeader numberOfProdcuts={products.length} />
+        {products.map((product: ProductType) => (
+          <ProductItem
+            key={`${product.id} + ${product.slug} `}
+            product={product}
+          />
+        ))}
       </ul>
     </div>
   );
