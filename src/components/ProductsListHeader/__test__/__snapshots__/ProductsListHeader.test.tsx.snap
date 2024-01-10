@@ -11,42 +11,16 @@ exports[`ProductsList Component matches snapshot 1`] = `
       <li
         class="grid justify-center grid-cols-[0.2fr_1.5fr_0.5fr_0.5fr] p-4 border-b border-gray-300 cursor-pointer"
       >
-        <span
-          aria-label="Title"
-          class="flex items-center justify-center"
-          role="columnheader"
-        >
-          <strong>
-            Products: 2
-          </strong>
-        </span>
-        <span
-          aria-label="Title"
-          class="flex items-center justify-center"
-          role="columnheader"
-        >
-          <strong>
-            Title
-          </strong>
-        </span>
-        <span
-          aria-label="Price"
-          class="flex items-center justify-center"
-          role="columnheader"
-        >
-          <strong>
-            Price
-          </strong>
-        </span>
-        <span
-          aria-label="Discount"
-          class="flex items-center justify-center"
-          role="columnheader"
-        >
-          <strong>
-            Discount
-          </strong>
-        </span>
+        2 Products
+        <strong>
+          Title
+        </strong>
+        <strong>
+          Price
+        </strong>
+        <strong>
+          Discount
+        </strong>
       </li>
       <li
         class="grid justify-center grid-cols-[0.2fr_1.5fr_0.5fr_0.5fr] p-4 border-b border-gray-300 cursor-pointer "
@@ -112,42 +86,16 @@ exports[`ProductsListHeader Component matches snapshot 1`] = `
   <li
     class="grid justify-center grid-cols-[0.2fr_1.5fr_0.5fr_0.5fr] p-4 border-b border-gray-300 cursor-pointer"
   >
-    <span
-      aria-label="Title"
-      class="flex items-center justify-center"
-      role="columnheader"
-    >
-      <strong>
-        Products: 2
-      </strong>
-    </span>
-    <span
-      aria-label="Title"
-      class="flex items-center justify-center"
-      role="columnheader"
-    >
-      <strong>
-        Title
-      </strong>
-    </span>
-    <span
-      aria-label="Price"
-      class="flex items-center justify-center"
-      role="columnheader"
-    >
-      <strong>
-        Price
-      </strong>
-    </span>
-    <span
-      aria-label="Discount"
-      class="flex items-center justify-center"
-      role="columnheader"
-    >
-      <strong>
-        Discount
-      </strong>
-    </span>
+    2 Products
+    <strong>
+      Title
+    </strong>
+    <strong>
+      Price
+    </strong>
+    <strong>
+      Discount
+    </strong>
   </li>
 </DocumentFragment>
 `;
