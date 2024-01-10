@@ -48,6 +48,10 @@ export const useFetchProducts = () => {
       });
   };
 
+  const handleReset = () => {
+    setProducts(initialProducts);
+  };
+
   const fetchProducts = () => {
     setIsLoading(true);
 
@@ -67,10 +71,11 @@ export const useFetchProducts = () => {
   };
 
   return {
+    handleSearch,
+    handleReset,
     fetchProducts,
     isLoading,
     error,
     products,
-    handleSearch,
   };
 };

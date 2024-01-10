@@ -1,4 +1,5 @@
-import { ProductsListHeader } from "./ProductsListHeader/ProductsListHeader";
+import { ProductItem } from "../ProductItem/ProductItem";
+import { ProductsListHeader } from "../ProductsListHeader/ProductsListHeader";
 
 export interface ProductsListProps {
   products: ProductType[];
@@ -9,7 +10,7 @@ export interface ProductType {
   title: string;
   vendor: string;
   tags: Array<string>;
-  published: true;
+  published: boolean;
   url: string;
   image_src: string;
   option_value: string;
@@ -20,30 +21,16 @@ export interface ProductType {
 }
 
 export const ProductsList = ({ products }: ProductsListProps) => {
-  const getDiscount = (discount: any) => {
-    return typeof discount === "number" ? `${discount}%` : "";
-  };
-
   return (
-    <div className="product-container">
-      <ul className="products-list">
-        <ProductsListHeader />
-        {products.length > 0
-          ? products.map((product: ProductType) => (
-              <li
-                key={product.slug}
-                className="product-item"
-                data-testid="product-list"
-              >
-                <img src={product.image_src} alt={product.title} height={50} />
-                <span data-testid="product-name">{product.title}</span>
-                <span data-testid="product-price">£{product.price}</span>
-                <span data-testid="subscription-discount">
-                  {getDiscount(product.subscription_discount)}
-                </span>
-              </li>
-            ))
-          : null}
+    <div className="min-w-3/4 ">
+      <ul className="rounded border border-gray-300 pl-0">
+        <ProductsListHeader numberOfProdcuts={products.length} />
+        {products.map((product: ProductType) => (
+          <ProductItem
+            key={`${product.id} + ${product.slug} `}
+            product={product}
+          />
+        ))}
       </ul>
     </div>
   );

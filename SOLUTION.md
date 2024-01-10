@@ -2,7 +2,7 @@
 
 ## Estimation
 
-Estimated: 7/8 hours for completetion of the task. Outstanding: Responsive style and more tests.
+Estimated: 8 hours for completetion of the task. Outstanding: Responsive style and more tests.
 
 Spent: x2 evenings worth, so around 6 hours. it was intermingled with some gaming, so I couldn't be sure exactly.
 
