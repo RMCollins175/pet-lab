@@ -17,7 +17,7 @@ exports[`ProductsList Component matches snapshot 1`] = `
           role="columnheader"
         >
           <strong>
-            2
+            Products: 2
           </strong>
         </span>
         <span

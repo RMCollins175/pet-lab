@@ -9,7 +9,7 @@ describe("ProductsListHeader Component", () => {
     render(<ProductsListHeader numberOfProdcuts={dummyProducts.length} />);
 
     const headers = screen.getAllByRole("columnheader");
-    expect(headers[0]).toHaveTextContent("2");
+    expect(headers[0]).toHaveTextContent("Products: 2");
     expect(headers[1]).toHaveTextContent("Title");
     expect(headers[2]).toHaveTextContent("Price");
     expect(headers[3]).toHaveTextContent("Discount");

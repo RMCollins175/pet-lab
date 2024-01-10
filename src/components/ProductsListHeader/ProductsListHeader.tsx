@@ -11,7 +11,7 @@ export const ProductsListHeader = ({
         className="flex items-center justify-center"
         aria-label="Title"
         role="columnheader">
-        <strong>{numberOfProdcuts}</strong>
+        <strong>Products: {numberOfProdcuts}</strong>
       </span>
       <span
         className="flex items-center justify-center"
